@@ -89,7 +89,7 @@ Vamos a um exemplo com PDO.
 
 1. Primeiro, crie uma pasta no htdocs chamada “pdo” e dentro dela um arquivo index.php com o seguinte conteúdo:
 
-Entendendo o código:
+## Entendendo o código:
 
 Na variável ## $dns ## temos todas as informações necessárias para acessar a base de dados pretendida.
  
@@ -98,3 +98,13 @@ No quarto parâmetro do construtor da classe PDO passamos a variável $opcoes e 
 $opcoes = [
 	PDO::ATTR_PERSISTENT => true
 ];
+ 
+- Conexões persistentes não fecham quando a execução do script termina. Quando uma conexão persistente é requisitada, o PHP verifica se já existe uma idêntica (que foi aberta e mantida anteriormente) - e, se ela existir, ele a utiliza. Se ela não existir, ele cria a conexão. Uma conexão 'idêntica' é uma conexão que foi aberta para o mesmo host, com o mesmo nome de usuário e a mesma senha.
+ 
+- Por fim, tentamos realizar a conexão dentro de um bloco try..catch, em caso de erro, podemos interromper a execução do script e exibir o motivo.
+ 
+$funcionarios = $pdo->query('SELECT id, nome, email FROM funcionario');
+ 
+- O método fetchObject() retorna os dados do funcionário atual da iteração na forma de objeto, por isso acessamos os dados desta maneira:
+
+
