@@ -67,3 +67,25 @@ $db = new mysqli('localhost', 'root', '', 'teste');
 - O quarto argumento é onde especificamos qual base de dados vamos usar nessa conexão que está sendo estabelecida.
  
 Claro, em um servidor Web (em um serviço de hospedagem ou em um servidor dedicado, por exemplo), os dados de conexão não seriam esses (assim se espera!) e, com certeza, o usuário do MySQL teria uma senha.
+
+_______________________________________________________________________________________
+
+# PDO
+##Reforçando o PDO:
+
+- Exemplo de como a conexão com o MySQL pode ser feita: 
+$con = new PDO("mysql:host=hostname;dbname=databasename", $user, $password);
+ 
+- Como a conexão pode ser feita ao banco de dados PostgreSQL: 
+$con = new PDO("pgsql:host=hostname;dbname=databasename;user=username;password=password");
+ 
+Perceba que muda, basicamente, o parâmetro de conexão de mysql:host para pgsql:host.
+ 
+PDO tem completo suporte às querys parametrizadas e certamente ele é a melhor opção de acesso a banco de dados disponível para PHP. A extensão MySQLi também é extremamente robusta, mas entre ela e o PDO, se você puder escolhê-lo, será sempre uma ótima opção. Você pode migrar de uma base de dados para outra sem muitas alterações no seu código fonte PHP, enquanto MySQLi, como o nome já diz, é voltado para banco MySQL.
+
+
+## Realizando conexão com PDO
+Vamos a um exemplo com PDO. 
+
+1. Primeiro, crie uma pasta no htdocs chamada “pdo” e dentro dela um arquivo index.php com o seguinte conteúdo:
+
