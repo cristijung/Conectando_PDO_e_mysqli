@@ -52,3 +52,18 @@ ________________________________________________________________________________
  
 - INSERT INTO funcionario (nome, email, endereco, telefone)
   VALUES ('Ricardo', 'ricardo@gmail.com.br', 'Rua de teste', '(99) 9999-9999'
+_______________________________________________________________________________________
+
+2. Criar uma pasta com nome de  mysqli e dentro dela um arquivo chamado index.php (código postado);
+
+## Entendendo o Código
+
+// Instancia a classe mysqli passando os dados de conexão
+$db = new mysqli('localhost', 'root', '', 'teste');
+ 
+- localhost é um apelido para o IP local 127.0.0.1, que aponta para a máquina que está sendo usada. Ou seja, está sendo realizada a conexão com o MySQL que está rodando na própria máquina.
+- root trata-se do nome do usuário do MySQL. Por padrão, este é o usuário configurado na instalação do Xampp. É possível criar diferentes usuários, com diferentes restrições no MySQL, mas isso é assunto para um estudo a parte sobre MySQL.
+- O terceiro argumento em branco ' ' trata-se da senha do usuário. Por padrão, no Xampp, a senha configurada para o usuário "root" é em branco, nula.
+- O quarto argumento é onde especificamos qual base de dados vamos usar nessa conexão que está sendo estabelecida.
+ 
+Claro, em um servidor Web (em um serviço de hospedagem ou em um servidor dedicado, por exemplo), os dados de conexão não seriam esses (assim se espera!) e, com certeza, o usuário do MySQL teria uma senha.
