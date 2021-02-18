@@ -89,3 +89,12 @@ Vamos a um exemplo com PDO.
 
 1. Primeiro, crie uma pasta no htdocs chamada “pdo” e dentro dela um arquivo index.php com o seguinte conteúdo:
 
+Entendendo o código:
+
+Na variável ## $dns ## temos todas as informações necessárias para acessar a base de dados pretendida.
+ 
+No quarto parâmetro do construtor da classe PDO passamos a variável $opcoes e nela configuramos que a conexão que estamos realizando deverá ser persistente.
+ 
+$opcoes = [
+	PDO::ATTR_PERSISTENT => true
+];
